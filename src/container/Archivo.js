@@ -15,7 +15,8 @@ export class Archivo {
 
     async listarAll() {
         try {
-            const objs = await this.listarAll()
+            const objs = await fs.readFile(this.ruta, 'utf-8');
+            return JSON.parse(objs);
         } catch (error) {
             return [];
         }
